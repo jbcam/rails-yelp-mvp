@@ -1,0 +1,16 @@
+<div class="message" id="new-review">
+  <div class="d-flex">
+    <img class="avatar-large" src="https://via.placeholder.com/150">
+    <div class="message-name">
+      <h3>Your review:</h3>
+      <p><%= Date.today.strftime("%d/%m/%Y") %></p>
+    </div>
+  </div>
+  <div class="message-body">
+    <%= simple_form_for(@review, html: { class: 'form' }) do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating %>
+      <%= f.button :submit %>
+    <% end %>
+ </div>
+</div>

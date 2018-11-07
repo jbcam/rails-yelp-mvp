@@ -1,0 +1,7 @@
+<%= render 'banner', restaurant: @restaurant %>
+<div class="container padded">
+  <h2>Reviews</h2>
+  <%= render 'reviews', reviews: @restaurant.reviews %>
+  <%= render 'review_form', review: @review %>
+</div>
+

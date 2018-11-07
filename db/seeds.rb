@@ -5,3 +5,51 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts 'Cleaning database...'
+Restaurant.destroy_all
+
+puts 'Creating restaurants...'
+restaurants_attributes = [
+  {
+    name:         'Dishoom',
+    address:      '7 Boundary St, London E2 7JE',
+    phone_number:  '07702 808436',
+    category: 'Indian',
+    reviews: [
+      Review.new(content: 'very good restaurant', rating: 5),
+      Review.new(content: 'good restaurant but too much waiting', rating: 3)
+    ]
+  },
+  {
+    name:         'Ceviche',
+    address:      '56A Shoreditch High St, London E1 6PQ',
+    phone_number:  '07347 808436',
+    category: "Peruvian",
+    reviews: [
+      Review.new(content: 'love the concept', rating: 5),
+      Review.new(content: 'Great but a bit expensive', rating: 4)
+    ]
+  },
+  {
+    name:         'Dishoom',
+    address:      '7 Boundary St, London E2 7JE',
+    phone_number:  '07702 808436',
+    category: 'Indian',
+    reviews: [
+      Review.new(content: 'very good restaurant', rating: 5),
+      Review.new(content: 'good restaurant but too much waiting', rating: 3)
+    ]
+  },
+  {
+    name:         'Ceviche',
+    address:      '56A Shoreditch High St, London E1 6PQ',
+    phone_number:  '07347 808436',
+    category: "Peruvian",
+    reviews: [
+      Review.new(content: 'love the concept', rating: 5),
+      Review.new(content: 'Great but a bit expensive', rating: 4)
+    ]
+  }
+]
+Restaurant.create!(restaurants_attributes)
+puts 'Finished!'
